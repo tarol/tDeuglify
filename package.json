@@ -1,0 +1,54 @@
+{
+	"name": "jsdecode",
+	"version": "0.0.0",
+	"description": "for js beautify",
+	"author": "tarol",
+	"license": "MIT",
+	"scripts": {
+    "start": "npm run identifier && npm run detransform",
+    "identifier": "npm run beauty && npm run rst && npm run fn && npm run args",
+		"beauty": "node codemod/beauty.js",
+		"rst": "node codemod/identifier/rst.js",
+		"fn": "node codemod/identifier/fn.js",
+    "args": "node codemod/identifier/args.js",
+    "detransform": "npm run ret",
+    "ret": "node codemod/detransform/ret.js"
+	},
+	"husky": {
+		"hooks": {
+			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+			"pre-commit": "lint-staged"
+		}
+	},
+	"commitlint": {
+		"extends": [
+			"@commitlint/config-conventional"
+		]
+	},
+	"lint-staged": {
+		"*.js": [
+			"prettier-eslint --write",
+			"git add"
+		]
+	},
+	"prettier": {},
+	"dependencies": {
+		"fs-extra": "^6.0.1",
+		"jest": "^23.3.0",
+		"js-beautify": "^1.10.3",
+		"jscodeshift": "^0.7.0",
+		"lodash": "^4.17.4",
+		"rimraf": "^3.0.2"
+	},
+	"devDependencies": {
+		"@commitlint/config-conventional": "^7.1.2",
+		"babel-eslint": "^9.0.0",
+		"commitlint": "^7.1.2",
+		"eslint": "^5.3.0",
+		"eslint-config-tarol": "0.0.6",
+		"eslint-plugin-html": "^4.0.5",
+		"husky": "^1.0.0",
+		"lint-staged": "^7.2.0",
+		"prettier-eslint-cli": "^4.7.1"
+	}
+}

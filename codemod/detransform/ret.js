@@ -2,8 +2,8 @@ const path = require('path');
 const fs = require('fs-extra');
 const j = require('jscodeshift');
 
-// const input = path.join(__dirname, '../../dist/output/args.js');
-const input = path.join(__dirname, '../../demo/ret.js');
+const input = path.join(__dirname, '../../dist/output/args.js');
+// const input = path.join(__dirname, '../../demo/ret.js');
 const output = path.join(__dirname, '../../dist/output/ret.js');
 
 const code = fs.readFileSync(input, {
@@ -55,5 +55,5 @@ const root = j(code)
   });
 
 // console.log(root.toSource());
-fs.outputFileSync(path.join(__dirname, '../../dist/demo/ret.js'), root.toSource());
-// fs.outputFileSync(output, root.toSource());
+// fs.outputFileSync(path.join(__dirname, '../../dist/demo/ret.js'), root.toSource());
+fs.outputFileSync(output, root.toSource());

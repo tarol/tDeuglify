@@ -17,6 +17,19 @@ function getVariableName(type, map) {
   return name;
 }
 
+function getAncestorByType(path, type) {
+  let parent = path.parent;
+
+  while (parent) {
+    if (parent.getValueProperty('type') === type) {
+      break;
+    }
+    parent = parent.parent;
+  }
+
+  return parent;
+}
+
 function getArgName(path, args, i) {
   let name = args.length === 1 ? 'arg' : `arg${i}`;
   const bindings = path.scope.getBindings();
@@ -31,8 +44,10 @@ function getArgName(path, args, i) {
     if (path.parent.getValueProperty('type') === 'Property') {
       name = `${path.parent.get('key').getValueProperty('name')}_${name}`;
     }
-    if (path.parent.getValueProperty('type') === 'VariableDeclarator') {
-      name = `${path.parent.get('id').getValueProperty('name')}_${name}`;
+    const ancestor = getAncestorByType(path, 'VariableDeclarator');
+
+    if (ancestor) {
+      name = `${ancestor.get('id').getValueProperty('name')}_${name}`;
     }
   }
   if (bindings[name]) {

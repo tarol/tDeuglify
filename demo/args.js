@@ -35,6 +35,11 @@ const c = {
   const Z = function(X, Y) {
     console.log(B);
   };
+  const T = Z ? function(X, Y) {
+    console.log(B);
+  } : function(X, Y) {
+    console.log(B);
+  };
   const R = {
     fn : function(X, Y) {
       console.log(B);

@@ -30,3 +30,14 @@ const c = {
     console.log(hour);
   },
 };
+
+(function(A, B) {
+  const Z = function(X, Y) {
+    console.log(B);
+  };
+  const R = {
+    fn : function(X, Y) {
+      console.log(B);
+    },
+  };
+}());

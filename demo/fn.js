@@ -1,5 +1,6 @@
 function a() {
-  const v = {}
+  const v = {};
+
   function a() {
   //   function a() {}
   //   function z() {}
@@ -12,10 +13,10 @@ function a() {
   // }
   a.prototype.b = function() {
     function d() {}
-  }
-  v.p = function () {
+  };
+  v.p = function() {
     function e() {}
-  }
+  };
   // a();
   // b();
 }

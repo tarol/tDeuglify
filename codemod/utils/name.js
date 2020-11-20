@@ -31,6 +31,9 @@ function getArgName(path, args, i) {
     if (path.parent.getValueProperty('type') === 'Property') {
       name = `${path.parent.get('key').getValueProperty('name')}_${name}`;
     }
+    if (path.parent.getValueProperty('type') === 'VariableDeclarator') {
+      name = `${path.parent.get('id').getValueProperty('name')}_${name}`;
+    }
   }
   if (bindings[name]) {
     name = `_${name}`;

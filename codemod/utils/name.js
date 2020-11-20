@@ -63,7 +63,7 @@ function getFnName(scope) {
         suffix = path.getValueProperty('id').name.match(reg)[1];
       }
       if (path.getValueProperty('type') === 'FunctionExpression') {
-        suffix = '_anon'
+        suffix = '_anon';
       }
     }
   }

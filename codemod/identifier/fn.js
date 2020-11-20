@@ -14,7 +14,7 @@ const code = fs.readFileSync(input, {
 
 const root = j(code)
   .find(j.FunctionDeclaration)
-  .forEach((p, i) => {
+  .forEach(p => {
     // 函数重命名
     renameName(p);
   });

@@ -2,7 +2,7 @@ const path = require('path');
 const fs = require('fs-extra');
 const j = require('jscodeshift');
 
-const input = path.join(__dirname, '../../dist/output/args.js');
+const input = path.join(__dirname, '../../dist/output/var.js');
 // const input = path.join(__dirname, '../../demo/ret.js');
 const output = path.join(__dirname, '../../dist/output/ret.js');
 

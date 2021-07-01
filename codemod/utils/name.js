@@ -98,8 +98,13 @@ function getFnName(scope) {
   return name;
 }
 
+function getDecName(p) {
+  return `var_${p.node.loc.start.line}_${p.node.loc.start.column}`;
+}
+
 module.exports = {
   getVariableName,
   getArgName,
   getFnName,
+  getDecName,
 };

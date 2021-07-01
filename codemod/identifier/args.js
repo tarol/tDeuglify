@@ -4,7 +4,7 @@ const j = require('jscodeshift');
 
 const { renameParams } = require('../utils/fn');
 
-const input = path.join(__dirname, '../../dist/output/fn.js');
+const input = path.join(__dirname, '../../dist/output/var.js');
 // const input = path.join(__dirname, '../../demo/args.js');
 const output = path.join(__dirname, '../../dist/output/args.js');
 

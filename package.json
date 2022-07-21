@@ -6,7 +6,7 @@
 	"license": "MIT",
 	"scripts": {
     "start": "npm run identifier && npm run detransform",
-    "identifier": "npm run beauty && npm run rst && npm run fn && npm run var && npm run args",
+    "identifier": "npm run beauty && npm run rst",
 		"beauty": "node codemod/beauty.js",
 		"rst": "node codemod/identifier/rst.js",
 		"fn": "node codemod/identifier/fn.js",

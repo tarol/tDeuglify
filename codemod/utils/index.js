@@ -5,7 +5,7 @@ const { idFilter } = require('./helper');
 function isThisScope(scope, path) {
   let curScope;
 
-  // 当父节点为函数声明时，当前作用域是父级作用域
+  // 特殊情况：当父节点为函数声明时，当前作用域是父级作用域
   if (path.parentPath.getValueProperty('type') === 'FunctionDeclaration') {
     curScope = path.scope.parent.path.scope;
   } else {

@@ -1,3 +1,6 @@
+/*
+ * rename：对函数进行重命名
+ */
 const path = require('path');
 const fs = require('fs-extra');
 const j = require('jscodeshift');

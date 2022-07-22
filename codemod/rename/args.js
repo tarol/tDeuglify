@@ -1,5 +1,5 @@
 /*
- * rename：对参数进行重命名
+ * rename：对参数进行重命名，理论上在rename/fn之后，因为为了明确区分参数，会在参数名中添加函数名作为前缀
  */
 const path = require('path');
 const fs = require('fs-extra');

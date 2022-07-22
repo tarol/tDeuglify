@@ -1,3 +1,6 @@
+/*
+ * rename：对一般的变量声明进行重命名
+ */
 const path = require('path');
 const fs = require('fs-extra');
 const j = require('jscodeshift');
@@ -13,16 +16,16 @@ const code = fs.readFileSync(input, {
 
 const reg = /^[A-Za-z$_]{1,2}$/;
 
-let count = 0;
+// let count = 0;
 const root = j(code)
   .find(j.VariableDeclarator)
   .filter(p => reg.test(p.get('id').getValueProperty('name')))
   .forEach(p => {
     // 变量重命名
     // renameId(p);
-    console.log(count);
+    // console.log(count);
     j(p).renameTo(getDecName(p));
-    count++;
+    // count++;
   });
 
 fs.outputFileSync(output, root.toSource());

@@ -1,3 +1,6 @@
+/*
+ * rename：对return语句中的变量进行重命名，理论上应该放在detransform/ret之前
+ */
 const path = require('path');
 const fs = require('fs-extra');
 const j = require('jscodeshift');

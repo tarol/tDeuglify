@@ -17,6 +17,7 @@ function getVariableName(type, map) {
   return name;
 }
 
+// 获取最近的类型为type的祖宗节点
 function getAncestorByType(path, type) {
   let parent = path.parent;
 
